@@ -56,6 +56,10 @@
           display: flex;
           justify-content: center;
           align-items: center;
+          h3{
+            margin: 0;
+            line-height: 20px;
+          }
         }
         .button_settings {
           display: flex;
