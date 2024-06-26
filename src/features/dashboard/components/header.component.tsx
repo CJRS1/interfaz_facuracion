@@ -13,7 +13,7 @@ import getfirstword from "../../../utils/getfirstword";
 import getpagebyurl from "../../../utils/getpagebyurl";
 import getfirstletter from "../../../utils/getfirstletter";
 import { useLocation } from "react-router-dom";
-import '../../../styles/header.css'
+import "../../../styles/header.css";
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -62,7 +62,6 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   },
 }));
 
-
 type User = {
   nombre: string;
   apellido: string;
@@ -78,9 +77,9 @@ export default function Header({
   const [showMenu, setShowMenu] = React.useState(false);
   const menuRef = React.useRef<HTMLDivElement>(null);
 
-  const location = useLocation()
-  console.log('location',location.pathname)
-  const page = getpagebyurl(location.pathname)
+  const location = useLocation();
+  console.log("location", location.pathname);
+  const page = getpagebyurl(location.pathname);
 
   const nombre = getfirstword(user.nombre);
   const letra_nombre = getfirstletter(user.nombre);
@@ -88,19 +87,21 @@ export default function Header({
   const letra_apellido = getfirstletter(user.apellido);
 
   const handleClickShowMenu = () => {
-    console.log('jeje')
+    console.log("jeje");
     setShowMenu(!showMenu);
   };
 
   console.log("menu", showMenu);
   const handleClickOutside = (event: MouseEvent) => {
     const target = event.target as Element | null;
-    if (menuRef.current && !menuRef.current.contains(target) && (!target || !target.closest('.profile_section'))) {
+    if (
+      menuRef.current &&
+      !menuRef.current.contains(target) &&
+      (!target || !target.closest(".profile_section"))
+    ) {
       setShowMenu(false);
     }
   };
-  
-  
 
   useEffect(() => {
     if (showMenu) {
@@ -132,8 +133,8 @@ export default function Header({
             <button className="profile_section" onClick={handleClickShowMenu}>
               <span>
                 <h3>
-                {letra_nombre}
-                {letra_apellido}
+                  {letra_nombre}
+                  {letra_apellido}
                 </h3>
               </span>
               <SettingsIcon />
@@ -160,12 +161,10 @@ export default function Header({
               <span>Configuración</span>
             </li>
             <li>
-              {/* <Form method="post" action="/logout">
-                <button type="submit" className="logout_button">
-                  <LogoutIcon sx={{ fontSize: 25 }} />
-                  <span>Cerrar sesión</span>
-                </button>
-              </Form> */}
+              <button type="submit" className="logout_button">
+                <LogoutIcon sx={{ fontSize: 25 }} />
+                <span>Cerrar sesión</span>
+              </button>
             </li>
           </ul>
         </div>
@@ -173,4 +172,3 @@ export default function Header({
     </header>
   );
 }
-

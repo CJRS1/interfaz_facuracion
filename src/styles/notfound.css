@@ -8,7 +8,7 @@
 }
 .notfound_container .notfound_card {
   width: 500px;
-  height: 450px;
+  height: 300px;
   border-radius: 20px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
   background: white;
@@ -19,7 +19,7 @@
   padding: 35px;
 }
 .notfound_container .notfound_card h1 {
-  font-size: 45px;
+  font-size: 35px;
   text-align: center;
   color: rgb(94, 53, 177);
 }
@@ -27,4 +27,26 @@
   font-size: 25px;
   text-align: center;
   color: rgb(94, 53, 177);
+}
+.notfound_container .notfound_card .back_button {
+  margin-top: 30px;
+  font-size: 20px;
+  text-decoration: none;
+  border-radius: 10px;
+  color: rgb(94, 53, 177);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100px;
+}
+.notfound_container .notfound_card .back_button:hover {
+  margin-top: 30px;
+  font-size: 20px;
+  text-decoration: none;
+  background: white;
+  text-decoration: underline;
+  border-radius: 10px;
+  color: rgb(94, 53, 177);
+  padding: 10px 20px;
 }/*# sourceMappingURL=notfound.css.map */

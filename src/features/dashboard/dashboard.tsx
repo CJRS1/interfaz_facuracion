@@ -1,10 +1,10 @@
 import * as React from "react";
 import PermContactCalendarIcon from "@mui/icons-material/PermContactCalendar";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
-import Header from "./components/header";
-import Sidebar from "./components/sidebarmenu";
+import Header from "./components/header.component";
+import Sidebar from "./components/sidebarmenu.component";
 
 type User = {
   nombre: string;
@@ -12,10 +12,8 @@ type User = {
 };
 
 function Dashboard({
-  children,
   user,
 }: {
-  children: React.ReactNode;
   user: User;
 }) {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -43,7 +41,7 @@ function Dashboard({
             showSidebar ? "windows_container" : "windows_container_full"
           }`}
         >
-          {children}
+          <Outlet />
         </div>
       </div>
     </main>
